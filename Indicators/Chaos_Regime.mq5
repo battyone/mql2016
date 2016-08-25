@@ -154,7 +154,7 @@ double calcRS(double h,double l,int n,int avgPeriod,int lookback,int r,int bars)
    double dmax=rsValues[ArrayMaximum(rsValues,r-(n-1),n)][0];
    double dmin=rsValues[ArrayMinimum(rsValues,r-(n-1),n)][0];
    rsValues[r][1]=(h-l)+rsValues[r-1][1]-rsValues[r-n][0];   
-   rsValues[r][2]=(dmax-dmin)/fmin(rsValues[r][1],_Point);
+   rsValues[r][2]=rsValues[r][1]/fmin((dmax-dmin),_Point);
    //---
    int i1st=n;
    if(r<=i1st)
