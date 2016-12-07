@@ -336,7 +336,7 @@ void lm(const double &src[],double &fits[][4],int x0,int min,int max,int span)
          if(div!=0)
            {
             
-            double b=(x*XYsum-Xsum*Ysum)/div; //slope
+            double b=(n*XYsum-Xsum*Ysum)/div; //slope
             double a=(X2sum*Ysum-XYsum*Xsum)/div; //intercept
             double X22=Xsum*Xsum;
             double Y22=Ysum*Ysum;
