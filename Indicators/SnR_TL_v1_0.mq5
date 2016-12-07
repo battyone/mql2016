@@ -214,7 +214,7 @@ int OnCalculate(const int rates_total,
 void calcTL(const double &hi[],const double &lo[],const double &cl[],const datetime &t[],const int i)
   {
    double fits[][4];
-   ln(cl,fits,i,InpTLPeriod1,InpTLPeriod2,InpTLSpan);
+   lm(cl,fits,i,InpTLPeriod1,InpTLPeriod2,InpTLSpan);
    double rslt[][2];
    double stdv[][3];
    optimize(hi,lo,fits,rslt,stdv,i);
@@ -309,7 +309,7 @@ void optimize(const double &hi[],const double &lo[],const double &fits[][4],doub
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
-void ln(const double &src[],double &fits[][4],int x0,int min,int max,int span)
+void lm(const double &src[],double &fits[][4],int x0,int min,int max,int span)
   {
    double Xsum=0.0;
    double Ysum=0.0;
